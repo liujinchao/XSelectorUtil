@@ -6,8 +6,7 @@ XSelector工具旨在解决项目中selector.xml文件随着需求的增加不�
 
 **先来看下XSelector能实现哪些效果，如下图所示（包含图中样式但不限于这些样式哦）：**
 
-![drawable_and_color.gif](https://github.com/liujinchao/XSelectorUtil/blob/master/screenshot/drawable_and_color2.gif)
-![shape_selector.gif](https://github.com/liujinchao/XSelectorUtil/blob/master/screenshot/shape_selector2.gif)
+![xselector.gif](https://github.com/liujinchao/XSelectorUtil/blob/master/screenshot/xselector.gif)
 
 
 ## XSelector如何使用
