@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.liujc.xselectordemo.ShapeActivity"/>
+        <activity android:name="com.liujc.xselectordemo.ShadowActivity"/>
     </application>
 
 </manifest>

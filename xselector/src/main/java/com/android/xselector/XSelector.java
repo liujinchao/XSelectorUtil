@@ -11,6 +11,7 @@ import android.support.annotation.ColorRes;
 import com.android.xselector.selector.ColorSelector;
 import com.android.xselector.selector.DrawableSelector;
 import com.android.xselector.selector.ShapeSelector;
+import com.android.xselector.shadow.ShadowHelper;
 
 /**
  * 类名称：XSelector
@@ -74,11 +75,25 @@ public class XSelector {
     public static ShapeSelector shapeSelector() {
         return ShapeSelector.getInstance();
     }
+
+    /**
+     * Drawable背景选择器
+     * @return
+     */
     public static DrawableSelector drawableSelector() {
         return DrawableSelector.getInstance();
     }
+
+    /**
+     * Color字体颜色选择器
+     * @return
+     */
     public static ColorSelector colorSelector() {
         return ColorSelector.getInstance();
+    }
+
+    public static ShadowHelper shadowHelper() {
+        return ShadowHelper.getInstance();
     }
 
     /**

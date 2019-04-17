@@ -14,8 +14,14 @@
             android:id="@+id/btn_shape"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="10dp"
             android:text="ShapeSelector的使用"/>
+        <Button
+            android:id="@+id/btn_shade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:text="阴影设置的使用"/>
         <EditText
             android:id="@+id/et1"
             android:layout_width="match_parent"
@@ -28,6 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:padding="5dp"
             android:hint="密码"/>
 
         <EditText
@@ -35,6 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:padding="5dp"
             android:hint="验证码"/>
 
         <Space

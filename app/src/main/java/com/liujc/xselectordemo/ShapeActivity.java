@@ -32,7 +32,7 @@ public class ShapeActivity extends AppCompatActivity {
         XSelector.shapeSelector()
                 .setShape(GradientDrawable.OVAL)
                 .defaultBgColor(R.color.colorAccent)
-                .pressedBgColor(R.color.colorPrimary)
+                .pressedBgColor(R.color.defaultColor)
                 .into(tv_oval_solid);
         TextView tv_oval_line = (TextView) findViewById(R.id.tv_oval_line);
         XSelector.shapeSelector()
@@ -45,7 +45,7 @@ public class ShapeActivity extends AppCompatActivity {
         XSelector.shapeSelector()
                 .setShape(GradientDrawable.OVAL)
                 .defaultBgColor(R.color.colorAccent)
-                .dashLine(1, R.color.colorPrimary, 5, 5)
+                .dashLine(1, R.color.defaultColor, 5, 5)
                 .into(tv_oval_dash_line);
         //矩形
         TextView tv_rect_solid_radius = (TextView)findViewById(R.id.tv_rect_solid_radius);
@@ -66,7 +66,7 @@ public class ShapeActivity extends AppCompatActivity {
         XSelector.shapeSelector()
                 .setShape(GradientDrawable.RECTANGLE)
                 .defaultBgColor(R.color.colorAccent)
-                .dashLine(1, R.color.colorPrimary, 5, 5)
+                .dashLine(1, R.color.defaultColor, 5, 5)
                 .radius(5)
                 .into(tv_rect_dash_line_radius);
         //圆角（常用）
@@ -86,12 +86,12 @@ public class ShapeActivity extends AppCompatActivity {
         //触摸反馈
         Button btn_selector_background = (Button) findViewById(R.id.btn_selector_background);
         XSelector.selectorBackground(
-                XSelector.shapeSelector().setShape(GradientDrawable.RECTANGLE).defaultBgColor(R.color.colorPrimary).radius(999).build(),
+                XSelector.shapeSelector().setShape(GradientDrawable.RECTANGLE).defaultBgColor(R.color.defaultColor).radius(999).build(),
                 XSelector.shapeSelector().setShape(GradientDrawable.RECTANGLE).defaultBgColor(R.color.colorAccent).radius(999).build())
                 .into(btn_selector_background);
         Button btn_selector_background_color = (Button)findViewById(R.id.btn_selector_background_color);
         XSelector.selectorBackground(
-                XSelector.shapeSelector().setShape(GradientDrawable.RECTANGLE).defaultBgColor(R.color.colorPrimary).radius(999).build(),
+                XSelector.shapeSelector().setShape(GradientDrawable.RECTANGLE).defaultBgColor(R.color.defaultColor).radius(999).build(),
                 XSelector.shapeSelector().setShape(GradientDrawable.RECTANGLE).defaultBgColor(R.color.colorAccent).radius(999).build())
                 .selectorColor("#ffffff", "#000000")
                 .into(btn_selector_background_color);
@@ -152,32 +152,32 @@ public class ShapeActivity extends AppCompatActivity {
         TextView tv_gradient_linear_tb =  (TextView)findViewById(R.id.tv_gradient_linear_tb);
         XSelector.shapeSelector()
                 .setShape(GradientDrawable.RECTANGLE)
-                .gradientLinear(ShapeSelector.TOP_BOTTOM, R.color.colorAccent, R.color.colorPrimary)
+                .gradientLinear(ShapeSelector.TOP_BOTTOM, R.color.colorAccent, R.color.defaultColor)
                 .into(tv_gradient_linear_tb);
         TextView tv_gradient_linear_bt =  (TextView)findViewById(R.id.tv_gradient_linear_bt);
         XSelector.shapeSelector()
                 .setShape(GradientDrawable.RECTANGLE)
-                .gradientLinear(ShapeSelector.BOTTOM_TOP, R.color.colorAccent, R.color.colorPrimary)
+                .gradientLinear(ShapeSelector.BOTTOM_TOP, R.color.colorAccent, R.color.defaultColor)
                 .into(tv_gradient_linear_bt);
         TextView tv_gradient_linear_lr =  (TextView)findViewById(R.id.tv_gradient_linear_lr);
         XSelector.shapeSelector()
                 .setShape(GradientDrawable.RECTANGLE)
-                .gradientLinear(ShapeSelector.LEFT_RIGHT, R.color.colorAccent, R.color.colorPrimary)
+                .gradientLinear(ShapeSelector.LEFT_RIGHT, R.color.colorAccent, R.color.defaultColor)
                 .into(tv_gradient_linear_lr);
         TextView tv_gradient_linear_rl =  (TextView)findViewById(R.id.tv_gradient_linear_rl);
         XSelector.shapeSelector()
                 .setShape(GradientDrawable.RECTANGLE)
-                .gradientLinear(ShapeSelector.RIGHT_LEFT, R.color.colorAccent, R.color.colorPrimary)
+                .gradientLinear(ShapeSelector.RIGHT_LEFT, R.color.colorAccent, R.color.defaultColor)
                 .into(tv_gradient_linear_rl);
         TextView tv_gradient_sweep =  (TextView)findViewById(R.id.tv_gradient_sweep);
         XSelector.shapeSelector()
                 .setShape(GradientDrawable.OVAL)
-                .gradientSweep(R.color.colorAccent, R.color.colorPrimary)
+                .gradientSweep(R.color.colorAccent, R.color.defaultColor)
                 .into(tv_gradient_sweep);
         TextView tv_gradient_radial =  (TextView)findViewById(R.id.tv_gradient_radial);
         XSelector.shapeSelector()
                 .setShape(GradientDrawable.OVAL)
-                .gradientRadial(30, R.color.colorAccent, R.color.colorPrimary)
+                .gradientRadial(30, R.color.colorAccent, R.color.defaultColor)
                 .into(tv_gradient_radial);
     }
 }
