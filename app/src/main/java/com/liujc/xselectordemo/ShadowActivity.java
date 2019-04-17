@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.android.xselector.XSelector;
 import com.android.xselector.shadow.ShadowHelper;
 
 public class ShadowActivity extends AppCompatActivity {
@@ -25,7 +26,7 @@ public class ShadowActivity extends AppCompatActivity {
         TextView textView4 = findViewById(R.id.text4);
         TextView textView5 = findViewById(R.id.text5);
 
-        ShadowHelper.getInstance().setBgColor(Color.parseColor("#3D5AFE"))
+        XSelector.shadowHelper().setBgColor(Color.parseColor("#3D5AFE"))
                 .setShapeRadius(dpToPx(8))
                 .setShadowColor(Color.parseColor("#66000000"))
                 .setShadowRadius(dpToPx(20))
@@ -33,14 +34,14 @@ public class ShadowActivity extends AppCompatActivity {
                 .setOffsetX(0)
                 .setOffsetY(0)
                 .into(textView1);
-        ShadowHelper.getInstance().setBgColor(Color.parseColor("#2979FF"))
+        XSelector.shadowHelper().setBgColor(Color.parseColor("#2979FF"))
                 .setShapeRadius(dpToPx(8))
                 .setShadowColor(Color.parseColor("#992979FF"))
                 .setShadowRadius(dpToPx(6))
                 .setOffsetX(0)
                 .setOffsetY(dpToPx(4))
                 .into(textView2);
-        ShadowHelper.getInstance().setBgColor(new int[] {
+        XSelector.shadowHelper().setBgColor(new int[] {
                 Color.parseColor("#536DFE"), Color.parseColor("#7C4DFF")})
                 .setShapeRadius(dpToPx(8))
                 .setShadowSide(ShadowHelper.ALL)
@@ -50,12 +51,12 @@ public class ShadowActivity extends AppCompatActivity {
                 .setOffsetY(dpToPx(5))
                 .into(textView3);
 
-        ShadowHelper.getInstance().setShape(ShadowHelper.SHAPE_CIRCLE)
+        XSelector.shadowHelper().setShape(ShadowHelper.SHAPE_CIRCLE)
                 .setBgColor(Color.parseColor("#1DE9B6"))
                 .setShadowColor(Color.parseColor("#99FF3D00"))
                 .setShadowRadius(dpToPx(8))
                 .into(textView4);
-        ShadowHelper.getInstance().setShape(ShadowHelper.SHAPE_CIRCLE)
+        XSelector.shadowHelper().setShape(ShadowHelper.SHAPE_CIRCLE)
                 .setBgColor(Color.parseColor("#FF3D00"))
                 .setShapeRadius(dpToPx(8))
                 .setShadowColor(Color.parseColor("#991DE9B6"))
@@ -65,7 +66,7 @@ public class ShadowActivity extends AppCompatActivity {
                 .into(textView5);
 
         View bg = findViewById(R.id.rl_bg);
-        ShadowHelper.getInstance()
+        XSelector.shadowHelper()
                 .setShapeRadius(dpToPx(8))
                 .setBgColor(Color.parseColor("#1DE9B6"))
                 .setShadowColor(Color.parseColor("#4DA65740"))

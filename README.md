@@ -1,5 +1,5 @@
 # XSelectorUtil
-一个可以用代码在TextView、EditText、Button等控件设置selector背景（触摸反馈，样式变化、文字颜色变化、hint文字颜色变化等效果）的组件
+一个可以用代码在TextView、EditText、Button等控件设置selector背景（触摸反馈，样式变化、文字颜色变化、hint文字颜色变化等效果）的组件,新增了ShadowHelper帮助控件实现阴影效果。
 
 **目的：**
 XSelector工具旨在解决项目中selector.xml文件随着需求的增加不断增多的问题，创造一个可以用代码在TextView、EditText、Button等控件设置selector背景（触摸反馈，样式变化、文字颜色变化、hint文字颜色变化等效果）的组件, 再也不用写selector.xml了，瞬间感觉好爽歪歪啊，如若感觉对你还有帮助，希望star一下。
@@ -151,5 +151,34 @@ XSelector工具旨在解决项目中selector.xml文件随着需求的增加不�
      ||selectedDrawable|选中|
      ||focusedDrawable|获取焦点|
      ||build|背景Drawable|
+     ||into|目标View|
+     
+     ****
+     
+3. **ShadowHelper**      
+     ```
+        XSelector.shadowHelper().setShape(ShadowHelper.SHAPE_CIRCLE)
+            .setBgColor(Color.parseColor("#FF3D00"))
+            .setShapeRadius(dpToPx(6))
+            .setShadowColor(Color.parseColor("#991DE9B6"))
+            .setShadowRadius(dpToPx(6))
+            .setOffsetX(dpToPx(4))
+            .setOffsetY(dpToPx(4))
+            .into(textView5);
+    
+     ```
+     使用方法存在但不限于上述使用方法，具体详细方法如下：
+
+     |模块|方法名|描述|
+     |:---|:---|:---:|
+     |shadowHelper|setShape|设置背景形状，椭圆或者圆形|
+     ||setBgColor|背景颜色|
+     ||setShapeRadius|设置背景半径|
+     ||setShadeSide|设置阴影方向，默认四周|
+     ||setShadeRadius|设置阴影半径|
+     ||setShadowColor|设置阴影颜色|
+     ||setOffsetX|设置阴影X轴偏移量|
+     ||setOffsetY|设置阴影Y轴偏移量|
+     ||setShadowAlpha|设置阴影透明度|
      ||into|目标View|
 

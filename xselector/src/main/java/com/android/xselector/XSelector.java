@@ -92,6 +92,10 @@ public class XSelector {
         return ColorSelector.getInstance();
     }
 
+    /**
+     * 阴影工具类
+     * @return
+     */
     public static ShadowHelper shadowHelper() {
         return ShadowHelper.getInstance();
     }
