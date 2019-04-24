@@ -11,7 +11,7 @@ XSelector工具旨在解决项目中selector.xml文件随着需求的增加不�
 
 ## XSelector如何使用
 
-把工具类引入到项目中：`compile 'com.android.util:xselector:1.0.1'`。
+把工具类引入到项目中：`compile 'com.android.util:xselector:1.0.2'`。
 
 ## 初始化：
 在Application中进行初始化: `XSelector.init(this);`
