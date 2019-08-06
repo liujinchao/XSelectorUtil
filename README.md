@@ -155,7 +155,11 @@ XSelector工具旨在解决项目中selector.xml文件随着需求的增加不�
      
      ****
      
-3. **ShadowHelper**      
+3. **ShadowHelper**   
+
+     ![阴影效果](https://github.com/liujinchao/XSelectorUtil/blob/master/screenshot/shadow.png)
+
+   **使用方法：**
      ```
         XSelector.shadowHelper().setShape(ShadowHelper.SHAPE_CIRCLE)
             .setBgColor(Color.parseColor("#FF3D00"))
@@ -181,4 +185,5 @@ XSelector工具旨在解决项目中selector.xml文件随着需求的增加不�
      ||setOffsetY|设置阴影Y轴偏移量|
      ||setShadowAlpha|设置阴影透明度|
      ||into|目标View|
+     
 
