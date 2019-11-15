@@ -6,8 +6,7 @@ XSelector工具旨在解决项目中selector.xml文件随着需求的增加不�
 
 **先来看下XSelector能实现哪些效果，如下图所示（包含图中样式但不限于这些样式哦）：**
 
-![xselector.gif](https://github.com/liujinchao/XSelectorUtil/blob/master/screenshot/xselector.gif)
-
+<img src="https://github.com/liujinchao/XSelectorUtil/blob/master/screenshot/xselector.gif" width="320" alt="xselector演示图">
 
 ## XSelector如何使用
 
@@ -157,7 +156,7 @@ XSelector工具旨在解决项目中selector.xml文件随着需求的增加不�
      
 3. **ShadowHelper**   
 
-     ![阴影效果](https://github.com/liujinchao/XSelectorUtil/blob/master/screenshot/shadow.png)
+    <img src="https://github.com/liujinchao/XSelectorUtil/blob/master/screenshot/shadow.png" width="320" alt="阴影效果">
 
    **使用方法：**
      ```
