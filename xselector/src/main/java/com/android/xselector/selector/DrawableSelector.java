@@ -158,6 +158,7 @@ public class DrawableSelector implements ISelectorUtil<Drawable, View> {
 
     @Override
     public void into(View view) {
+        view.setClickable(true);
         view.setBackground(create());
         if (isSelectorColor) {
             try {

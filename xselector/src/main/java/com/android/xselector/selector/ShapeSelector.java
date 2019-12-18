@@ -9,7 +9,6 @@ import android.support.annotation.Dimension;
 import android.support.annotation.IntDef;
 import android.support.annotation.StringDef;
 import android.view.View;
-import android.widget.TextView;
 
 import com.android.xselector.XSelector;
 import com.android.xselector.interfaces.ISelectorUtil;
@@ -656,7 +655,7 @@ public class ShapeSelector implements ISelectorUtil<Drawable, View> {
 
     @Override
     public void into(View view) {
-        if (isBackgroundColor && view instanceof TextView){ //针对selector作用在textview无效问题
+        if (isBackgroundColor){ //针对selector作用无效问题
             view.setClickable(true);
         }
         view.setBackground(createShape());
