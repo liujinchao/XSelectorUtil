@@ -10,7 +10,7 @@ XSelector工具旨在解决项目中selector.xml文件随着需求的增加不�
 
 ## XSelector如何使用
 
-把工具类引入到项目中：`compile 'com.android.util:xselector:1.0.2'`。
+把工具类引入到项目中：`compile 'com.android.util:xselector:1.0.3'`。
 
 ## 初始化：
 在Application中进行初始化: `XSelector.init(this);`
@@ -54,6 +54,13 @@ XSelector工具旨在解决项目中selector.xml文件随着需求的增加不�
                 .defaultBgColor(R.color.colorAccent)
                 .pressedBgColor(R.color.colorPrimary)
                 .into(tv_oval_solid);
+                
+        ImageView img1 = (ImageView) findViewById(R.id.img1);
+        XSelector.shapeSelector()
+               .setShape(GradientDrawable.OVAL)
+               .defaultBgColor(R.color.colorAccent)
+               .pressedBgColor(R.color.defaultColor)
+               .into(img1);
        ```
    + 渐变效果
       ```
@@ -74,6 +81,7 @@ XSelector工具旨在解决项目中selector.xml文件随着需求的增加不�
                 .setShape(GradientDrawable.OVAL)
                 .gradientRadial(30, R.color.colorAccent, R.color.colorPrimary)
                 .into(tv_gradient_radial);
+                
       ```
    **详细方法名如下：**
 
@@ -131,6 +139,14 @@ XSelector工具旨在解决项目中selector.xml文件随着需求的增加不�
                 .defaultDrawable(R.mipmap.blue_primary)
                 .pressedDrawable(R.mipmap.blue_primary_dark)
                 .into(btn1);
+         ```
+         
+    +  作用在ImageView
+         ```
+        XSelector.drawableSelector()
+               .defaultDrawable(R.mipmap.blue_primary)
+               .pressedDrawable(R.mipmap.blue_primary_dark)
+               .into(img1);
          ```
      使用方法存在但不限于上述使用方法，具体详细方法如下：
 
