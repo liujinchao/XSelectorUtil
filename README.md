@@ -16,7 +16,7 @@ XSelector工具旨在解决项目中selector.xml文件随着需求的增加不�
 在Application中进行初始化: `XSelector.init(this);`
 
 ## 工具相关使用方法
-   ****
+
 1. **ShapeSelector**
      + 圆形边框
         ```
