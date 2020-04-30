@@ -14,10 +14,9 @@ import com.android.xselector.selector.ShapeSelector;
 import com.android.xselector.shadow.ShadowHelper;
 
 /**
- * 类名称：XSelector
- * 创建者：Create by liujc
- * 创建时间：Create on 2018/4/15 21:35
- * 描述：selector 工具类
+ * @author :liujc
+ * @date : 2020/4/30
+ * @Description : selector 工具类
  */
 public class XSelector {
 

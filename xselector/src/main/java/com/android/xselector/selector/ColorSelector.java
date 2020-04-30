@@ -5,37 +5,35 @@ import android.graphics.Color;
 import android.support.annotation.ColorRes;
 import android.widget.TextView;
 
-import com.android.xselector.interfaces.ISelectorUtil;
+import com.android.xselector.interfaces.ISelector;
 import com.android.xselector.utils.XHelper;
 
-
 /**
- * 类名称：ColorSelector
- * 创建者：Create by liujc
- * 创建时间：Create on 2018/4/14 16:37
- * 描述：字体颜色状态选择器
+ * @author :liujc
+ * @date : 2020/4/30
+ * @Description : 字体颜色状态选择器
  */
-public class ColorSelector implements ISelectorUtil<ColorStateList, TextView> {
+public class ColorSelector implements ISelector<ColorStateList, TextView> {
+
+    public enum TextColorType{
+        TEXT_COLOR,
+        HINT_TEXT_COLOR
+    }
+
     private static ColorSelector mColorSelector;
-    public static int TEXT_COLOR = 1;
-    public static int HINT_TEXT_COLOR = 2;
-    private int textType = TEXT_COLOR;
+    private TextColorType textType = TextColorType.TEXT_COLOR;
 
+    private static final int DEFAULT_COLOR_ID = -1;
     //不可点击颜色
-    private int disabledColor;
+    private int disabledColor = DEFAULT_COLOR_ID;
     //获得焦点的颜色
-    private int focusedColor;
+    private int focusedColor = DEFAULT_COLOR_ID;
     //触摸颜色
-    private int pressedColor;
+    private int pressedColor = DEFAULT_COLOR_ID;
     //触摸颜色
-    private int selectedColor;
+    private int selectedColor = DEFAULT_COLOR_ID;
     //正常颜色
-    private int normalColor;
-
-    private boolean hasSetDisabledColor = false;
-    private boolean hasSetPressedColor = false;
-    private boolean hasSetSelectedColor = false;
-    private boolean hasSetFocusedColor = false;
+    private int normalColor = DEFAULT_COLOR_ID;
 
     public static ColorSelector getInstance() {
         mColorSelector = new ColorSelector();
@@ -43,75 +41,49 @@ public class ColorSelector implements ISelectorUtil<ColorStateList, TextView> {
     }
 
     public ColorSelector defaultColor(@ColorRes int tmpColor) {
-        int color = XHelper.getColorRes(tmpColor);
-        normalColor = color;
-        if (!hasSetDisabledColor)
-            disabledColor = color;
-        if (!hasSetPressedColor)
-            pressedColor = color;
-        if (!hasSetSelectedColor)
-            selectedColor = color;
-        if (!hasSetFocusedColor)
-            focusedColor = color;
+        normalColor = XHelper.getColorRes(tmpColor);;
         return this;
     }
     public ColorSelector defaultColor(String tmpColor) {
-        int color = Color.parseColor(tmpColor);
-        normalColor = color;
-        if (!hasSetDisabledColor)
-            disabledColor = color;
-        if (!hasSetPressedColor)
-            pressedColor = color;
-        if (!hasSetSelectedColor)
-            selectedColor = color;
-        if (!hasSetFocusedColor)
-            focusedColor = color;
+        normalColor = Color.parseColor(tmpColor);
         return this;
     }
 
     public ColorSelector disabledColor(@ColorRes int color) {
         disabledColor = XHelper.getColorRes(color);
-        hasSetDisabledColor = true;
         return this;
     }
 
     public ColorSelector disabledColor(String color) {
         disabledColor = Color.parseColor(color);
-        hasSetDisabledColor = true;
         return this;
     }
 
     public ColorSelector pressedColor(@ColorRes int color) {
         pressedColor = XHelper.getColorRes(color);
-        hasSetPressedColor = true;
         return this;
     }
 
     public ColorSelector pressedColor(String color) {
         pressedColor = Color.parseColor(color);
-        hasSetPressedColor = true;
         return this;
     }
 
     public ColorSelector selectedColor(@ColorRes int color) {
         selectedColor = XHelper.getColorRes(color);
-        hasSetSelectedColor = true;
         return this;
     }
     public ColorSelector selectedColor(String color) {
         selectedColor = Color.parseColor(color);
-        hasSetSelectedColor = true;
         return this;
     }
 
     public ColorSelector focusedColor(@ColorRes int color) {
         focusedColor = XHelper.getColorRes(color);
-        hasSetFocusedColor = true;
         return this;
     }
     public ColorSelector focusedColor(String color) {
         focusedColor = Color.parseColor(color);
-        hasSetFocusedColor = true;
         return this;
     }
 
@@ -128,14 +100,17 @@ public class ColorSelector implements ISelectorUtil<ColorStateList, TextView> {
         return this;
     }
 
-    public ColorSelector textType(int type) {
+    public ColorSelector textType(TextColorType type) {
         textType = type;
         return this;
     }
 
     @Override
     public void into(TextView textView) {
-        if (HINT_TEXT_COLOR == textType){
+        if (isDefaultColorValue(normalColor)){
+            throw new IllegalArgumentException("请设置defaultColor属性！");
+        }
+        if (TextColorType.HINT_TEXT_COLOR == textType){
             textView.setHintTextColor(create());
         }else {
             textView.setTextColor(create());
@@ -154,14 +129,18 @@ public class ColorSelector implements ISelectorUtil<ColorStateList, TextView> {
      */
     public ColorStateList create() {
         int[] colors = new int[]{
-                hasSetDisabledColor ? disabledColor : normalColor,
-                hasSetPressedColor ? pressedColor : normalColor,
-                hasSetSelectedColor ? selectedColor : normalColor,
-                hasSetFocusedColor ? focusedColor : normalColor,
+                isDefaultColorValue(disabledColor) ? normalColor : disabledColor,
+                isDefaultColorValue(pressedColor) ? normalColor : pressedColor,
+                isDefaultColorValue(selectedColor) ? normalColor : selectedColor,
+                isDefaultColorValue(focusedColor) ? normalColor: focusedColor,
                 normalColor
         };
 
         return getColorStateList(colors);
+    }
+
+    private boolean isDefaultColorValue(int color) {
+        return color == DEFAULT_COLOR_ID;
     }
 
     public ColorStateList getColorStateList(int[] colors) {

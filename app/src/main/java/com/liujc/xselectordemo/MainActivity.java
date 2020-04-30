@@ -81,17 +81,17 @@ public class MainActivity extends AppCompatActivity {
         XSelector.colorSelector()
                 .defaultColor(R.color.gray)
                 .focusedColor(R.color.red)
-                .textType(ColorSelector.HINT_TEXT_COLOR)
+                .textType(ColorSelector.TextColorType.HINT_TEXT_COLOR)
                 .into(et1);
         XSelector.colorSelector()
                 .defaultColor(R.color.gray)
                 .focusedColor(R.color.black)
-                .textType(ColorSelector.HINT_TEXT_COLOR)
+                .textType(ColorSelector.TextColorType.HINT_TEXT_COLOR)
                 .into(et2);
         XSelector.colorSelector()
                 .defaultColor(R.color.gray)
                 .focusedColor(R.color.black)
-                .textType(ColorSelector.HINT_TEXT_COLOR)
+                .textType(ColorSelector.TextColorType.HINT_TEXT_COLOR)
                 .into(et3);
 
 //      为EditText中的文字设置在不同触摸状态的TextColor

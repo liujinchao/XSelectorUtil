@@ -3,12 +3,11 @@ package com.android.xselector.interfaces;
 import android.view.View;
 
 /**
- * 类名称：ISelectorUtil
- * 创建者：Create by liujc
- * 创建时间：Create on 2018/4/14 16:36
- * 描述：TODO
+ * @author :liujc
+ * @date : 2020/4/30
+ * @Description : TODO
  */
-public interface ISelectorUtil<T,V extends View> {
+public interface ISelector<T,V extends View> {
 
     /**
      * 目标view

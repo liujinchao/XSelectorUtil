@@ -19,11 +19,11 @@ import android.support.v4.view.ViewCompat;
 import android.view.View;
 
 /**
- * 类名称：ShadowHelper
- * 创建者：Create by liujc
- * 创建时间：Create on 2018/5/28
- * 描述：控件阴影效果
+ * @author :liujc
+ * @date : 2020/4/30
+ * @Description : 控件阴影效果
  */
+
 public class ShadowHelper extends Drawable {
 
     static ShadowHelper shadowHelper;

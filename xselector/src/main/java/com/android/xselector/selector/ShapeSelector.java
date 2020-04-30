@@ -11,20 +11,19 @@ import android.support.annotation.StringDef;
 import android.view.View;
 
 import com.android.xselector.XSelector;
-import com.android.xselector.interfaces.ISelectorUtil;
+import com.android.xselector.interfaces.ISelector;
 import com.android.xselector.utils.XHelper;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-
 /**
- * 类名称：ShapeSelector
- * 创建者：Create by liujc
- * 创建时间：Create on 2018/4/14 16:41
- * 描述：选择器形状
+ * @author :liujc
+ * @date : 2020/4/30
+ * @Description : 选择器形状
  */
-public class ShapeSelector implements ISelectorUtil<Drawable, View> {
+
+public class ShapeSelector implements ISelector<Drawable, View> {
     static ShapeSelector mDevShape;
 
     //实线宽度 默认1px

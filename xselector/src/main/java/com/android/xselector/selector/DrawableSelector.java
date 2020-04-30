@@ -10,18 +10,16 @@ import android.support.annotation.DrawableRes;
 import android.view.View;
 import android.widget.TextView;
 
-import com.android.xselector.interfaces.ISelectorUtil;
+import com.android.xselector.interfaces.ISelector;
 import com.android.xselector.utils.XHelper;
 
-
 /**
- * 类名称：DrawableSelector
- * 创建者：Create by liujc
- * 创建时间：Create on 2018/4/14 16:38
- * 描述：背景状态选择器（颜色背景、图片背景）
+ * @author :liujc
+ * @date : 2020/4/30
+ * @Description : 背景状态选择器（颜色背景、图片背景）
  */
 
-public class DrawableSelector implements ISelectorUtil<Drawable, View> {
+public class DrawableSelector implements ISelector<Drawable, View> {
     private static DrawableSelector mDrawableSelector;
     //不可点击
     private Drawable mDisabledDrawable;
@@ -37,12 +35,6 @@ public class DrawableSelector implements ISelectorUtil<Drawable, View> {
     private boolean isSelectorColor;
     private ColorStateList mColorStateList;
 
-    private boolean hasSetDisabledDrawable = false;
-    private boolean hasSetPressedDrawable = false;
-    private boolean hasSetSelectedDrawable = false;
-    private boolean hasSetFocusedDrawable = false;
-
-
     public static DrawableSelector getInstance() {
         mDrawableSelector = new DrawableSelector();
         return mDrawableSelector;
@@ -54,38 +46,26 @@ public class DrawableSelector implements ISelectorUtil<Drawable, View> {
 
     public DrawableSelector defaultDrawable(Drawable drawable) {
         mNormalDrawable = drawable;
-        if (!hasSetDisabledDrawable)
-            mDisabledDrawable = drawable;
-        if (!hasSetPressedDrawable)
-            mPressedDrawable = drawable;
-        if (!hasSetSelectedDrawable)
-            mSelectedDrawable = drawable;
-        if (!hasSetFocusedDrawable)
-            mFocusedDrawable = drawable;
         return this;
     }
 
     public DrawableSelector disabledDrawable(Drawable drawable) {
         mDisabledDrawable = drawable;
-        hasSetDisabledDrawable = true;
         return this;
     }
 
     public DrawableSelector pressedDrawable(Drawable drawable) {
         mPressedDrawable = drawable;
-        hasSetPressedDrawable = true;
         return this;
     }
 
     public DrawableSelector selectedDrawable(Drawable drawable) {
         mSelectedDrawable = drawable;
-        hasSetSelectedDrawable = true;
         return this;
     }
 
     public DrawableSelector focusedDrawable(Drawable drawable) {
         mFocusedDrawable = drawable;
-        hasSetFocusedDrawable = true;
         return this;
     }
 
@@ -165,7 +145,7 @@ public class DrawableSelector implements ISelectorUtil<Drawable, View> {
                 ((TextView) view).setTextColor(mColorStateList);
             } catch (Exception e) {
                 e.printStackTrace();
-                throw new ExceptionInInitializerError("设置字体颜色选择器（Selector）请传入TextView（包括Button）！！！");
+                throw new ClassCastException("设置字体颜色选择器（Selector）请传入TextView（包括Button）！！！");
             }
         }
     }
@@ -185,13 +165,13 @@ public class DrawableSelector implements ISelectorUtil<Drawable, View> {
      */
     public StateListDrawable create() {
         StateListDrawable selector = new StateListDrawable();
-        if (hasSetDisabledDrawable)
+        if (mDisabledDrawable != null)
             selector.addState(new int[]{-android.R.attr.state_enabled}, mDisabledDrawable);
-        if (hasSetPressedDrawable)
+        if (mPressedDrawable != null)
             selector.addState(new int[]{android.R.attr.state_pressed}, mPressedDrawable);
-        if (hasSetSelectedDrawable)
+        if (mSelectedDrawable != null)
             selector.addState(new int[]{android.R.attr.state_selected}, mSelectedDrawable);
-        if (hasSetFocusedDrawable)
+        if (mFocusedDrawable != null)
             selector.addState(new int[]{android.R.attr.state_focused}, mFocusedDrawable);
         selector.addState(new int[]{}, mNormalDrawable);
         return selector;
